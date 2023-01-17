@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 body {
   background: #181818;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-family: "Roboto", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
 .home .evokeLogo {
   margin: 0 auto;
-  margin-top: 37px;
+  margin-top: 90px;
   text-align: center;
 }
 .home .evokeLogo a {
@@ -37,7 +38,7 @@ body {
   margin: 0 auto;
   border-radius: 4px;
   background-color: #CFEE11;
-  transition: 0.2s;
+  transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .home .tab li:hover {
   color: #fff;
@@ -63,7 +64,7 @@ body {
   position: relative;
 }
 .home .contents .item:hover img {
-  scale: 1.07;
+  scale: 1.05;
 }
 .home .contents .item:hover .dim {
   opacity: 1;
@@ -72,7 +73,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.5s cubic-bezier(0.65, 0.01, 0.65, 0.97);
+  transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .home .contents .item .dim {
   cursor: pointer;
@@ -84,7 +85,7 @@ body {
   background: rgba(79, 79, 79, 0.2);
   backdrop-filter: blur(5px);
   opacity: 0;
-  transition: 0.5s cubic-bezier(0.65, 0.01, 0.65, 0.97);
+  transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .home .contents .item .text {
   position: absolute;
@@ -119,6 +120,127 @@ body {
 }
 .home .contents .item .text .proj {
   margin-bottom: 6px;
+}
+.home .detail {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.home .detail.modal {
+  display: block;
+}
+.home .detail .item {
+  background-color: #1D1D1D;
+  padding: 30px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  width: 90vw;
+  height: 80vh;
+  max-width: 1200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.home .detail .item.on {
+  display: flex;
+}
+.home .detail .item .close {
+  width: 48px;
+  aspect-ratio: 1/1;
+  background: url(../img/btn_close.svg) center/cover no-repeat;
+  position: absolute;
+  top: -68px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-indent: -9999px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.home .detail .item .close:hover {
+  opacity: 1;
+}
+.home .detail .item .left {
+  width: 287px;
+  flex: 0 0 287px;
+}
+.home .detail .item .left .cate {
+  margin-bottom: 6px;
+}
+.home .detail .item .left .name {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.home .detail .item .left .period {
+  display: flex;
+  gap: 7px;
+}
+.home .detail .item .left .skill {
+  display: flex;
+  gap: 4px;
+  margin: 18px 0;
+}
+.home .detail .item .left .skill div {
+  width: 28px;
+  height: 28px;
+  background: center/cover no-repeat;
+}
+.home .detail .item .left .skill .skill_pho {
+  background-image: url(../img/skill_photoshop.svg);
+}
+.home .detail .item .left .skill .skill_fig {
+  background-image: url(../img/skill_figma.svg);
+}
+.home .detail .item .left .skill .skill_xd {
+  background-image: url(../img/skill_XD.svg);
+}
+.home .detail .item .left .link {
+  color: #CFEE11;
+  font-size: 12px;
+  padding-right: 10px;
+  background: url(../img/ic_linkArr.svg) right center no-repeat;
+  text-decoration: none;
+}
+.home .detail .item .left .link:hover {
+  text-decoration: underline;
+}
+.home .detail .item .left .contact {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  padding: 10px;
+  background-color: #0f0f0f;
+  color: #CFEE11;
+  font-size: 14px;
+  text-decoration: none;
+}
+.home .detail .item .right {
+  display: flex;
+  flex: 1 0 0;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 100%;
+  overflow: auto;
+}
+.home .detail .item .right img {
+  width: calc((100% - 10px) / 2);
+  aspect-ratio: 421/342;
+  object-fit: cover;
+}
+.home .detail .item .right img.wide {
+  width: 100%;
+  aspect-ratio: 853/235;
 }
 
 /*# sourceMappingURL=style.css.map */
