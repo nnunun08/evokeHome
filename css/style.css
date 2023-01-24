@@ -29,13 +29,12 @@ body {
 .home .tab li::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -13px;
   display: block;
   width: 0;
   height: 4px;
-  margin: 0 auto;
   border-radius: 4px;
   background-color: #CFEE11;
   transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -62,6 +61,7 @@ body {
   flex: 0 0 auto;
   width: calc((100% - 60px) / 4);
   aspect-ratio: 1/1;
+  display: none;
 }
 .home .contents .item:hover img {
   scale: 1.05;
