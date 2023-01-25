@@ -28,8 +28,5 @@ for (i = 0; i < tab.length; i++) {
                 target.style.display = 'none'
             }
         }
-
-
     })
-
 }
