@@ -11,7 +11,7 @@
 <body>
     <div class="home">
         <div class="evokeLogo">
-            <a class="" href="#">
+            <a class="" href="./index.html">
                 <img class="" src="./img/logo_w.svg" alt="evoke_logo">
             </a>
         </div>
@@ -30,13 +30,28 @@
 
         <div class="contents">
 
-            <div class="item cate-pub" modalTarget="하이닉스웹구축" style="display: block;">
-                <img src="./img/dummy.png" alt="더미이미지">
+            <!-- 
+                퍼블리싱 cate-pub
+                디자인 cate-des
+             -->
+            <div class="item cate-des" modalTarget="아리박스" style="display: block;">
+                <img src="./img/project/aribox/cover_aribox.png" alt="더미이미지">
                 <div class="dim">
                     <div class="text">
-                        <div class="cate"><span>UXUI</span><span>WEB</span></div>
-                        <div class="proj">SK하이닉스 뉴스룸</div>
+                        <div class="cate"><span>UXUI</span><span>APP</span></div>
+                        <div class="proj">아리박스</div>
                         <div class="year">2022</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item cate-des" modalTarget="팬즈월드" style="display: block;">
+                <img src="./img/project/fansworld/cover_fansworld.png" alt="더미이미지">
+                <div class="dim">
+                    <div class="text">
+                        <div class="cate"><span>UXUI</span><span>APP</span></div>
+                        <div class="proj">팬즈월드</div>
+                        <div class="year">2023</div>
                     </div>
                 </div>
             </div>
@@ -65,38 +80,53 @@
         </div>
 
         <div class="detail">
-            <div class="item" modalName="하이닉스웹구축">
+            <div class="item" modalName="아리박스">
                 <div class="close" onclick="modalClose()">close</div>
 
                 <div class="left">
-                    <div class="cate">Web</div>
-                    <h2 class="name">SK하이닉스 반응형 웹 구축</h2>
+                    <div class="cate">APP</div>
+                    <h2 class="name">아리박스 앱 디자인</h2>
                     <div class="period">
                         <span>2022</span>
                         <span>1 month</span>
                     </div>
 
                     <div class="skill">
-                        <div class="skill_pho"></div>
                         <div class="skill_fig"></div>
-                        <div class="skill_xd"></div>
                     </div>
 
-                    <a class="link" href="#" target="_blank">바로보기</a>
+                    <a class="link" href="https://www.figma.com/proto/8BjVagTrMNYs7DawPZRYmC/ARIBOX-(Copy)?page-id=0%3A1&node-id=165%3A6713&viewport=303%2C208%2C0.05&scaling=scale-down" target="_blank">피그마 프로토타입 보기</a>
                     <a class="contact" href="mailto:nnunun08@gmail.com?subject=프로젝트 문의">프로젝트 문의</a>
                 </div>
 
                 <div class="right">
-                    <img src="./img/dummy.png" alt="하이닉스" class="wide">
-                    <img src="./img/dummy.png" alt="하이닉스">
-                    <img src="./img/dummy.png" alt="하이닉스">
-                    <img src="./img/dummy.png" alt="하이닉스">
-                    <img src="./img/dummy.png" alt="하이닉스">
-                    <img src="./img/dummy.png" alt="하이닉스">
-                    <img src="./img/dummy.png" alt="하이닉스">
-                    <img src="./img/dummy.png" alt="하이닉스">
-                    <img src="./img/dummy.png" alt="하이닉스">
-                    <img src="./img/dummy.png" alt="하이닉스">
+                    <img src="./img/project/aribox/detail_aribox.png" alt="aribox" class="wide">
+
+                </div>
+            </div>
+
+            <div class="item" modalName="팬즈월드">
+                <div class="close" onclick="modalClose()">close</div>
+
+                <div class="left">
+                    <div class="cate">APP</div>
+                    <h2 class="name">팬즈월드 앱 디자인</h2>
+                    <div class="period">
+                        <span>2023</span>
+                        <span>1 week</span>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill_fig"></div>
+                    </div>
+
+                    <a class="link" href="https://www.figma.com/proto/lPpo6AKzkHNML6I64ggIZF/%ED%8F%AC%ED%8F%B4?page-id=1%3A6775&node-id=1%3A7665&viewport=507%2C389%2C0.1&scaling=scale-down" target="_blank">피그마 프로토타입 보기</a>
+                    <a class="contact" href="mailto:nnunun08@gmail.com?subject=프로젝트 문의">프로젝트 문의</a>
+                </div>
+
+                <div class="right">
+                    <img src="./img/project/fansworld/cover_fansworld.png" alt="fansworld" class="wide">
+
                 </div>
             </div>
 
@@ -141,10 +171,27 @@
         </div>
     </div>
     
-    <footer>
+    <a href="mailto:nnunun08@gmail.com?subject=프로젝트 문의">
+        <div class="mail">
+            <img src="./img/ic_mail.svg" alt="mailIcon">
+        </div>
+    </a>
 
+    <footer>
+        <img class="logo" src="./img/logo_w.svg" alt="footer logo">
+        <div class="copyright">Copyright 2023. EVOKE All rights reserved.</div>    
     </footer>
 
     <script src="./js/modal.js"></script>
+
+    <script>
+        const evokeLogo = document.querySelector('.evokeLogo')
+        const evokeLogoImg = document.querySelector('.evokeLogo img')
+        console.log(evokeLogo)
+        setTimeout(()=>{
+            evokeLogoImg.style.transform = 'scale(1.0)'
+            evokeLogo.style.height = '10vh'
+        }, 1000)
+    </script>
 </body>
 </html>
