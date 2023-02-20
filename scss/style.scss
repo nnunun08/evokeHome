@@ -2,6 +2,7 @@
  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 
  body {
+    min-width: 1440px;
      background: #181818;
      font-family: 'Roboto', "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
  }
@@ -71,7 +72,7 @@
 
      .contents {
          display: flex;
-         min-height: 38vh;
+         min-height: 58vh;
          gap: 20px;
          padding: 60px 30px;
          flex-wrap: wrap;
