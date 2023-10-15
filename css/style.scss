@@ -2,13 +2,15 @@
  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 
  body {
-    min-width: 1440px;
+    // min-width: 1440px;
      background: #181818;
      font-family: 'Roboto', "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
  }
 
  $trans: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+ $modalLeftWidth: 287px;
  .home {
+    min-height: 80vh;
 
      .evokeLogo {
          margin: 0 auto;
@@ -66,17 +68,26 @@
                  &::after {
                      width: 25px;
                  }
-             }
-         }
+            }
+        }
+        @media screen and (max-width:768px) {
+            gap: 10px;
+            li {
+                padding: 15px;
+            }
+        }
      }
 
      .contents {
          display: flex;
-         min-height: 58vh;
+        //  min-height: 58vh;
          gap: 20px;
          padding: 60px 30px;
          flex-wrap: wrap;
          align-items: flex-start;
+         @media screen and (max-width:480px) {
+            padding: 40px 20px;
+         }
 
          .item {
              background-color: #111;
@@ -84,6 +95,12 @@
              position: relative;
              flex: 0 0 auto;
              width: calc((100% - 60px) / 4);
+             @media screen and (max-width:768px) {
+                width: calc((100% - 40px) / 3);
+             }
+             @media screen and (max-width:480px) {
+                width: calc((100% - 20px) / 2);
+             }
              aspect-ratio: 1/1;
              display:none;
             border-radius: 8px;
@@ -216,13 +233,14 @@
                  }
              }
              .left {
-                 width: 287px;
+                 width: $modalLeftWidth;
                  flex: 0 0 287px;
                  padding: 30px 0 30px 30px;
                  opacity: 0;
                  transform: translateY(20px);
                  transition: 0.7s;
                  transition-delay: 0.5s;
+                 box-sizing: border-box;
 
                  .cate {
                      margin-bottom: 6px;
@@ -333,6 +351,10 @@
                     background: linear-gradient(rgb(29, 29, 29), rgba(29, 29, 29, 0%));
                     height: 10px;
                  }
+                &::after {
+                    left: unset;
+                    width: calc(100% - $modalLeftWidth)
+                }
 
                  img {
                      width: calc((100% - 10px) / 2);
@@ -352,7 +374,50 @@
                      }
                  }
              }
-         }
+             @media screen and (max-width:768px) {
+                flex-direction: column;
+                width: 100vw;
+                height: 100vh;
+                overflow: auto;
+                .close {
+                    position: sticky;
+                    flex: 0 0 48px;
+                    right: 20px;
+                    top: 20px;
+                    left: unset;
+                    height: 48px;
+                    display: block;
+                    margin: 0;
+                    margin-left: auto;
+                    z-index: 2;
+                    flex: 0 0 auto;
+                }
+                .left {
+                    width: 100%;
+                    padding-top: 20px;
+                    flex: 0 0 auto;
+                    position: sticky;
+                    top: 48px;
+                    .contact {
+                        display: none;
+                    }
+                }
+                .right {
+                    z-index: 1;
+                    flex: 1 0 auto;
+                    height: auto;
+                    overflow: visible;
+                    padding-right: 0;
+                    img {
+                        border-radius: 20px;
+                    }
+                    &::before,
+                    &::after {
+                        display: none;
+                    }
+                }
+             }
+            }
         }
     }
     .mail {

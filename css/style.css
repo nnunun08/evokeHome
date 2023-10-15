@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 body {
-  min-width: 1440px;
   background: #181818;
   font-family: "Roboto", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
+.home {
+  min-height: 80vh;
+}
 .home .evokeLogo {
   margin: 0 auto;
   text-align: center;
@@ -58,13 +60,25 @@ body {
 .home .tab li.ac::after {
   width: 25px;
 }
+@media screen and (max-width: 768px) {
+  .home .tab {
+    gap: 10px;
+  }
+  .home .tab li {
+    padding: 15px;
+  }
+}
 .home .contents {
   display: flex;
-  min-height: 58vh;
   gap: 20px;
   padding: 60px 30px;
   flex-wrap: wrap;
   align-items: flex-start;
+}
+@media screen and (max-width: 480px) {
+  .home .contents {
+    padding: 40px 20px;
+  }
 }
 .home .contents .item {
   background-color: #111;
@@ -75,6 +89,16 @@ body {
   aspect-ratio: 1/1;
   display: none;
   border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .home .contents .item {
+    width: calc((100% - 40px) / 3);
+  }
+}
+@media screen and (max-width: 480px) {
+  .home .contents .item {
+    width: calc((100% - 20px) / 2);
+  }
 }
 .home .contents .item:hover img {
   scale: 1.05;
@@ -193,6 +217,7 @@ body {
   transform: translateY(20px);
   transition: 0.7s;
   transition-delay: 0.5s;
+  box-sizing: border-box;
 }
 .home .detail .item .left .cate {
   margin-bottom: 6px;
@@ -291,6 +316,10 @@ body {
   background: linear-gradient(rgb(29, 29, 29), rgba(29, 29, 29, 0));
   height: 10px;
 }
+.home .detail .item .right::after {
+  left: unset;
+  width: calc(100% - 287px);
+}
 .home .detail .item .right img {
   width: calc((100% - 10px) / 2);
   aspect-ratio: 421/342;
@@ -308,6 +337,50 @@ body {
 }
 .home .detail .item .right img:hover {
   border-color: #CFEE11;
+}
+@media screen and (max-width: 768px) {
+  .home .detail .item {
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+  }
+  .home .detail .item .close {
+    position: sticky;
+    flex: 0 0 48px;
+    right: 20px;
+    top: 20px;
+    left: unset;
+    height: 48px;
+    display: block;
+    margin: 0;
+    margin-left: auto;
+    z-index: 2;
+    flex: 0 0 auto;
+  }
+  .home .detail .item .left {
+    width: 100%;
+    padding-top: 20px;
+    flex: 0 0 auto;
+    position: sticky;
+    top: 48px;
+  }
+  .home .detail .item .left .contact {
+    display: none;
+  }
+  .home .detail .item .right {
+    z-index: 1;
+    flex: 1 0 auto;
+    height: auto;
+    overflow: visible;
+    padding-right: 0;
+  }
+  .home .detail .item .right img {
+    border-radius: 20px;
+  }
+  .home .detail .item .right::before, .home .detail .item .right::after {
+    display: none;
+  }
 }
 
 .mail {
